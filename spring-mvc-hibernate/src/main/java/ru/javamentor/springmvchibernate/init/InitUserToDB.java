@@ -1,9 +1,11 @@
-package ru.javamentor.springmvchibernate.service;
+package ru.javamentor.springmvchibernate.init;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.javamentor.springmvchibernate.model.Role;
 import ru.javamentor.springmvchibernate.model.User;
+import ru.javamentor.springmvchibernate.service.RoleService;
+import ru.javamentor.springmvchibernate.service.UserService;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;

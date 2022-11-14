@@ -8,7 +8,7 @@ import ru.javamentor.springmvchibernate.repository.RoleRepository;
 
 import java.util.List;
 
-@Transactional
+
 @Service
 public class RoleServiceImpl implements RoleService{
     private final RoleRepository roleRepository;
@@ -24,6 +24,7 @@ public class RoleServiceImpl implements RoleService{
     }
 
     @Override
+    @Transactional
     public void addRole(Role role) {
         roleRepository.save(role);
     }

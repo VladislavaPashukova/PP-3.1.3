@@ -16,7 +16,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Transactional
 @Service
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
@@ -45,12 +44,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public void saveUser(User user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         userRepository.save(user);
     }
 
     @Override
+    @Transactional
     public void updateUser(User user) {
         User userToUpdate = userRepository.getById(user.getId());
         userToUpdate.setUsername(user.getUsername());
@@ -60,6 +61,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public void deleteUserById(Long id) {
         userRepository.deleteById(id);
     }
